@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 /**
@@ -18,6 +19,7 @@ import lombok.NonNull;
 **/
 @Entity
 @Data
+@NoArgsConstructor
 public class TennisPlayer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

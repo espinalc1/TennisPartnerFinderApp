@@ -10,8 +10,15 @@ public class CreateTennisPlayerService {
     private CreateTennisPlayerRepository createTennisPlayerRepository;
     public TennisPlayer createTennisPlayer(TennisPlayer tennisPlayer){
         // this should help us access a repo
-        TennisPlayer createdTennisPlayer = createTennisPlayerRepository.save(tennisPlayer);
+        TennisPlayer createdTennisPlayer;
+        if (this.isUnique(tennisPlayer)){
+            return createTennisPlayerRepository.save(tennisPlayer);
+        }
+        return null;
+    }
 
-        return createdTennisPlayer;
+    public Boolean isUnique(TennisPlayer tennisPlayer){
+        TennisPlayer foundTennisPlayer = createTennisPlayerRepository.findByUserName(tennisPlayer.getUserName());
+        return (foundTennisPlayer == null);
     }
 }
