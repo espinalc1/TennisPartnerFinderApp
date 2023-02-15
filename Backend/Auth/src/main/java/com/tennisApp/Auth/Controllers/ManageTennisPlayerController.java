@@ -20,7 +20,7 @@ public class ManageTennisPlayerController {
     public ResponseEntity<TennisPlayer> updateTennisPlayerProfile(@RequestBody TennisPlayer tennisPlayer){
         TennisPlayer updatedTennisPlayer = manageTennisPlayerService.updateTennisPlayer(tennisPlayer);
         if (updatedTennisPlayer != null){
-            return ResponseEntity.ok(updatedTennisPlayer);
+            return ResponseEntity.ok().body(updatedTennisPlayer);
         }
 
         return ResponseEntity.status(409).body(tennisPlayer);
