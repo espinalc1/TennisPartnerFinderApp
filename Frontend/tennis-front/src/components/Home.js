@@ -40,7 +40,7 @@ class Home extends Component{
                 <label>Password</label>
                 <input type="password" value={this.state.password} onChange={this.passwordHandler}></input>
                 <button type="submit">Login</button>
-                <button type="submit" onChange="">Create account</button>
+                <button type="submit">Create account</button>
                 <CreateAccount></CreateAccount>
             </div>
             </form>

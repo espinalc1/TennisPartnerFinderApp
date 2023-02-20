@@ -43,6 +43,7 @@ class CreateAccount extends Component{
     }
 
     ustaRatingHandler = (event) => {
+        
         this.setState(
             {
                 ustaRating: event.target.value
@@ -50,14 +51,15 @@ class CreateAccount extends Component{
         );
     }
 
-    submitHandler = () => {
-
+    submitHandler = (event) => {
+        window.alert(this.state.password + this.state.username + this.state.ustaRating + this.state.age);
+        event.preventDefault();
     }
 
     render() {
         return(
         <div>
-            <form>
+            <form >
             <div>
                 <h1>Please enter information for your account</h1>
                 <label>Username</label>
@@ -73,7 +75,7 @@ class CreateAccount extends Component{
                 <input type="number" value={this.state.age} onChange={this.ageHandler}></input>
                 <label>USTA Rating</label>
                 <input type="number" value={this.state.ustaRating} onChange={this.ustaRatingHandler}></input>
-                <button type="submit">Create account</button>
+                <button type="submit" onClick={this.submitHandler}>Create account</button>
             </div>
             </form>
         </div>) 
